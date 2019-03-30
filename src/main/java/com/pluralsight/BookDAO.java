@@ -101,4 +101,18 @@ public class BookDAO {
         e.printStackTrace();
       }
     }
+
+    public void updateBook(Book book) {
+      final String SQL = "UPDATE book SET title = ?, author = ?, price = ? WHERE id = ?";
+
+      try (PreparedStatement statement = jdbcConnection.prepareStatement(SQL)) {
+        statement.setString(1, book.getTitle());
+        statement.setString(2, book.getAuthor());
+        statement.setFloat(3, book.getPrice());
+        statement.setInt(4, book.getId());
+        statement.executeUpdate();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+    }
 }
