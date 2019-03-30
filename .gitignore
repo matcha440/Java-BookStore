@@ -23,3 +23,6 @@ target/
 /target/
 /.metadata/
 /.recommenders/
+
+# VS Code stuff, because I don't want to use Eclipse
+.vscode
